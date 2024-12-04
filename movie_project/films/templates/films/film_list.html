@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Список фильмов</title>
-</head>
-<body>
-    <h1>Список фильмов</h1>
-    <ul>
-        {% for film in films %}
-        <li>
-            <h2>{{ film.title }}</h2>
-            <p>{{ film.description }}</p>
-            <blockquote>{{ film.review }}</blockquote>
-        </li>
-        {% endfor %}
-    </ul>
-    <a href="/add/">Добавить новый фильм</a>
-</body>
-</html>
+<!-- templates/films/film_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}Список фильмов{% endblock %}
+
+{% block content %}
+<h1>Список фильмов</h1>
+<ul class="list-group mt-4">
+    {% for film in films %}
+    <li class="list-group-item">
+        <h2>{{ film.title }}</h2>
+        <p>{{ film.description }}</p>
+        <blockquote class="blockquote">{{ film.review }}</blockquote>
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_film' %}" class="btn btn-primary mt-4">Добавить новый фильм</a>
+{% endblock %}

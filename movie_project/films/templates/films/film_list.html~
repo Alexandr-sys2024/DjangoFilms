@@ -2,26 +2,18 @@
 <html>
 <head>
     <title>Список фильмов</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-pzjw8f+ua7Kw1TIqaqZzJOuj91+kcxuBq6Y48deQpG1zVHmyaurGaDy4z5K4eZ9k" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="mb-4">Список фильмов</h1>
-        <ul class="list-group mb-3">
-            {% for film in films %}
-            <li class="list-group-item">
-                <h2>{{ film.title }}</h2>
-                <p>{{ film.description }}</p>
-                <blockquote class="blockquote">
-                    <p class="mb-0">{{ film.review }}</p>
-                </blockquote>
-            </li>
-            {% endfor %}
-        </ul>
-        <a href="/add/" class="btn btn-success">Добавить новый фильм</a>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGaZFb8AksdQRVoxMfooAO58M" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgQNX1+3mMd26l7cxtwt/F+GpB0h4I5k5DasmMf3WO5gr3v1fl0" crossorigin="anonymous"></script>
+    <h1>Список фильмов</h1>
+    <ul>
+        {% for film in films %}
+        <li>
+            <h2>{{ film.title }}</h2>
+            <p>{{ film.description }}</p>
+            <blockquote>{{ film.review }}</blockquote>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/add/">Добавить новый фильм</a>
 </body>
 </html>
